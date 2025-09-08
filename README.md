@@ -1,5 +1,5 @@
 # CarRentProject
-Urmia University Software Project
+## Urmia University Software Project
 
 
 
@@ -24,14 +24,14 @@ This setup keeps things tidy and makes it easy to extend later — for example, 
 🔄Return cars and free them up for the next rental 
 
 🏗️Project Structure
-
+```
 final_project/
 ├── main.py                # Entry point
 ├── controller/            # Business logic (Car, Person, Rental controllers)
 ├── model/
 │   ├── entity/            # Car, Person, Rental classes
 │   └── da/                # Data Access layer (acts like a mini database)
-
+```
 ⚙️How It Works
 
 🔮Entities
@@ -56,31 +56,36 @@ Requirements
 Python 3.10+
 
 Installation
-git clone https://github.com/your-username/mft_final_project.git
-cd mft_final_project
-
+```
+git clone https://github.com/CarRentUU/CarRentProject.git
+cd CarRentProject
+```
 Run it
+```
 python main.py
-
+```
 📌 Example Usage
 
 Here’s how you’d use the system in code:
 
 # Register a customer
+```
 from controller.person_controller import PersonController
 pc = PersonController()
 pc.register(name="Alice", contact="alice@email.com")
-
+```
 # Add a car
+```
 from controller.car_controller import CarController
 cc = CarController()
 cc.register(model="Toyota Corolla", year=2022)
-
+```
 # Rent a car
+```
 from controller.rental_controller import RentalController
 rc = RentalController()
 rc.rent(car_id=1, person_id=1, rental_date="2025-09-08")
 
 # Return it
 rc.return_car(rental_id=1, return_date="2025-09-10")
-
+```
