@@ -15,36 +15,37 @@ This setup keeps things tidy and makes it easy to extend later — for example, 
 
 ✨ What You Can Do
 
-Add and manage customers 👤
+👤Add and manage customers 
 
-Register and update cars 🚘
+🚘Register and update cars 
 
-Rent cars to customers and track their rentals 📄
+📄Rent cars to customers and track their rentals 
 
-Return cars and free them up for the next rental 🔄
+🔄Return cars and free them up for the next rental 
 
-🏗️ Project Structure
-mft_final_project/
+🏗️Project Structure
+
+final_project/
 ├── main.py                # Entry point
 ├── controller/            # Business logic (Car, Person, Rental controllers)
 ├── model/
 │   ├── entity/            # Car, Person, Rental classes
 │   └── da/                # Data Access layer (acts like a mini database)
 
-⚙️ How It Works
+⚙️How It Works
 
-Entities
+🔮Entities
 Think of these as blueprints: a Car, a Person, and a Rental. Each one has its own properties, like a car’s model or a customer’s name.
 
-Data Access
+🔮Data Access
 Instead of using a real database, the project currently uses in-memory storage (just Python objects in lists). It’s simple but can be swapped out for a real DB later.
 
-Controllers
+🔮Controllers
 This is where the rules live. For example:
 
-You can’t rent a car that’s already rented.
+🔮You can’t rent a car that’s already rented.
 
-You can’t register the same person twice.
+🔮You can’t register the same person twice.
 
 Main Program
 The main.py script ties everything together. Right now, it’s command-line–based, but the architecture is ready for bigger things (like a GUI or API).
