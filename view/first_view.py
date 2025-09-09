@@ -12,13 +12,13 @@ class FirstView:
         CarView()
 
     def open_rent(self):
-        RentalView()  # فقط پنجره اجاره باز شود، بدون پر کردن خودکار
+        RentalView()
 
     def __init__(self):
         self.win = Tk()
-        self.win.title("Car Rental System")
-        self.win.geometry("900x650")
-        self.win.configure(bg="#f7f9fc")
+        self.win.title("سیستم اجاره خودرو 🚘")
+        self.win.geometry("950x650")
+        self.win.configure(bg="#ecf0f1")
 
         # ----- هدر بالا -----
         header = Frame(self.win, bg="#2c3e50", height=80)
@@ -33,7 +33,7 @@ class FirstView:
         )
         title.pack(side=LEFT, padx=20)
 
-        # دکمه‌ها
+        # سبک دکمه‌ها
         btn_style = {
             "font": ("Arial", 12, "bold"),
             "bg": "#3498db",
@@ -45,12 +45,12 @@ class FirstView:
             "pady": 8,
         }
 
-        Button(header, text="ثبت نام", command=self.open_person, **btn_style).pack(side=RIGHT, padx=10)
-        Button(header, text="ثبت خودرو", command=self.open_car, **btn_style).pack(side=RIGHT, padx=10)
-        Button(header, text="اجاره خودرو", command=self.open_rent, **btn_style).pack(side=RIGHT, padx=10)
+        Button(header, text="ثبت نام 🧑", command=self.open_person, **btn_style).pack(side=RIGHT, padx=10)
+        Button(header, text="ثبت خودرو 🚙", command=self.open_car, **btn_style).pack(side=RIGHT, padx=10)
+        Button(header, text="اجاره خودرو 🔑", command=self.open_rent, **btn_style).pack(side=RIGHT, padx=10)
 
         # ----- بخش اصلی -----
-        main_frame = Frame(self.win, bg="#f7f9fc")
+        main_frame = Frame(self.win, bg="#ecf0f1")
         main_frame.pack(fill=BOTH, expand=True, pady=20)
 
         # گرفتن ماشین‌ها از دیتابیس
@@ -59,16 +59,35 @@ class FirstView:
             for car in car_list:
                 self.create_car_card(main_frame, car)
         else:
-            Label(main_frame, text="هیچ ماشینی ثبت نشده است.", font=("Arial", 14), bg="#f7f9fc").pack(pady=20)
+            Label(main_frame, text="هیچ ماشینی ثبت نشده است 🚫", font=("Arial", 14), bg="#ecf0f1", fg="#7f8c8d").pack(pady=20)
 
         self.win.mainloop()
 
     def create_car_card(self, parent, car):
-        frame = Frame(parent, relief=RIDGE, borderwidth=2, pady=10, bg="white")
-        frame.pack(fill=X, padx=40, pady=15)
+        frame = Frame(
+            parent,
+            relief=FLAT,
+            bg="white",
+            highlightbackground="#bdc3c7",
+            highlightthickness=1
+        )
+        frame.pack(fill=X, padx=40, pady=10, ipadx=10, ipady=10)
 
-        # نمایش برند و مدل + آیدی ماشین
-        Label(frame, text=f"{car.brand} {car.model} (ID: {car.id})", font=("Arial", 16, "bold"), bg="white").pack(anchor=W, padx=15, pady=5)
-        info_text = f"پلاک: {car.license_plate} | رنگ: {car.color}"
-        Label(frame, text=info_text, font=("Arial", 13), bg="white").pack(anchor=W, padx=15)
+        # برند و مدل + ایموجی
+        Label(
+            frame,
+            text=f"🚘 {car.brand} {car.model}   (ID: {car.id})",
+            font=("Arial", 16, "bold"),
+            bg="white",
+            fg="#2c3e50"
+        ).pack(anchor=W, padx=15, pady=5)
 
+        # پلاک و رنگ
+        info_text = f"پلاک: {car.license_plate}   |   رنگ: {car.color}"
+        Label(
+            frame,
+            text=info_text,
+            font=("Arial", 13),
+            bg="white",
+            fg="#7f8c8d"
+        ).pack(anchor=W, padx=15, pady=5)
