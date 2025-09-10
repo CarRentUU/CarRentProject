@@ -89,3 +89,29 @@ rc.rent(car_id=1, person_id=1, rental_date="2025-09-08")
 # Return it
 rc.return_car(rental_id=1, return_date="2025-09-10")
 ```
+
+## Test Execution
+
+#### 1. Using the Custom Test Runner
+```bash
+# Run all tests
+python run_tests.py
+
+# Run with verbose output
+python run_tests.py -v
+
+# Run specific test pattern
+python run_tests.py --pattern "test_car*"
+
+# Run tests from specific directory
+python run_tests.py --dir tests/model
+```
+
+#### 2. Using Python's unittest module
+```bash
+# Run specific test file
+python -m unittest tests.model.test_car
+
+# Run with verbose output
+python -m unittest discover tests -v
+```
