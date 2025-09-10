@@ -1,0 +1,32 @@
+# Car Rental Project 
+
+sqlalchemy
+sqlalchemy-utils
+pymysql
+
+# Core testing framework
+unittest2>=1.1.0
+
+# Optional: pytest for more advanced testing features
+pytest>=7.0.0
+pytest-mock>=3.10.0
+pytest-cov>=4.0.0
+
+# Optional: for HTML test reports
+pytest-html>=3.1.0
+
+# Optional: for test discovery and parallel execution
+pytest-xdist>=3.2.0
+
+# Optional: for testing with different Python versions
+tox>=4.0.0
+
+# Mocking library (included in Python 3.3+)
+mock>=4.0.0; python_version < '3.3'
+
+# For database testing (if needed)
+# sqlalchemy-utils>=0.38.0
+# factory-boy>=3.2.0
+
+# Code coverage reporting
+coverage>=7.0.0
